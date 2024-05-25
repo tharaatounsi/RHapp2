@@ -1,0 +1,12 @@
+.navbar {
+    background-color:  #140174; /* Couleur de fond bleu */
+  }
+  
+  .navbar .nav-link {
+    color: #ffffff; /* Couleur du texte blanc */
+  }
+  
+  .navbar .nav-link:hover {
+    color: #f8f9fa; /* Couleur du texte blanc au survol */
+  }
+  

@@ -1,0 +1,73 @@
+<!--
+Job Title
+<input
+    class="form-control"
+    name="mot de passe"
+    required
+    [(ngModel)]="job.title"
+/>
+
+Job Position
+<input
+    class="form-control"
+    name="mot de passe"
+    required
+    [(ngModel)]="job.position"
+/>
+
+Job Description
+<input
+    class="form-control"
+    name="mot de passe"
+    required
+    [(ngModel)]="job.description"
+/>
+
+<button (click)="createjob()">Create</button>
+-->
+
+<div class="card card-container mt-4 mx-auto">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>titre d'emploi:</label>
+                    <input
+                        class="form-control"
+                        name="mot de passe"
+                        required
+                        [(ngModel)]="job.title"
+                    />
+                </div>
+                <div class="col-md-6">
+                    <label>poste:</label>
+                    <input
+                        class="form-control"
+                        name="mot de passe"
+                        required
+                        [(ngModel)]="job.position"
+                    />
+                </div>
+            </div>
+            <div class="row">
+               
+                    <div class="col-md-12 ">
+                        <label> Description:</label>
+                        <textarea
+                            class="form-control"
+                            name="mot de passe"
+                            rows="5" 
+                            required
+                            [(ngModel)]="job.description"
+                        ></textarea>
+                    </div>
+                
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-success" (click)="createjob()">Créer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

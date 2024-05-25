@@ -1,0 +1,72 @@
+
+
+<div class="col-md-12">
+  <div class="card card-container mt-4 mx-auto ">
+    <div class="card">
+      <div class="card-body">
+
+<form class="form-login">
+ <img src="https://t3.ftcdn.net/jpg/02/50/27/14/360_F_250271442_s1JYQbkJXr4yypcZ2ZTk2xEqkTnE85Zr.jpg"> 
+      <h2 class="form-login-heading">Connectez <span class="log">vous</span></h2>
+      <div class="login-wrap">
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            name="work id"
+            required
+            minlength="3"
+            maxlength="20"
+            placeholder="votre email" autofocus=""
+            [(ngModel)]="email"
+          />
+          <!--<div *ngIf="username.errors && (username.invalid || username.touched)">
+            <small class="text-danger"  [class.d-none]=" username.untouched" style="font-size: 11px;"> Le nom d'utilisateur est requis.</small>
+            <small class="text-danger"  [class.d-none]=" username.untouched" style="font-size: 11px;"> Il doit contenir au moins 3 caractères.</small>
+            <small class="text-danger" [class.d-none]=" username.untouched" style="font-size: 11px;"> Il doit contenir au maximum 20 caractères.</small>
+          </div>-->
+
+        </div>
+        <br>
+        <div>
+          <input
+            type="password"
+            class="form-control"
+            name="mot de passe"
+            required
+            minlength="6"
+            placeholder="Mot de passe"
+            [(ngModel)]="password"
+          />
+
+          <!--<div *ngIf="password.errors && (password.invalid || password.touched)">
+            <small class="text-danger" [class.d-none]=" password.untouched" style="font-size: 11px;">Le mot de passe est requis</small>
+            <small class="text-danger" [class.d-none]=" password.untouched" style="font-size: 11px;"> Il doit contenir au moins 6 caractères</small>
+          </div>-->
+
+
+        </div>
+        <div>
+        <div>
+
+        </div>
+        <div>
+          <button class="btn btn-primary btn-block" (click)="login()" type="button">
+            <i class="fa fa-lock"></i> SE CONNECTER
+          </button>
+        </div>
+          <hr>
+
+
+        <div class="form-group" *ngIf="errorMessage.length != 0">
+          <div
+            class="alert alert-danger"
+            role="alert"
+          >
+          Échec de la connexion : {{ errorMessage }}
+          </div>
+        </div>
+      </div>
+
+
+</div></form></div></div></div></div>

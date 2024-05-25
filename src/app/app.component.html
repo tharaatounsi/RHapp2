@@ -1,0 +1,66 @@
+<!-- Bouton de déconnexion (utilise la classe "button") -->
+<!--<div class="button"><button (click)="logout()">disconnect</button></div>-->
+
+<!-- Bouton de déconnexion (utilise la classe "logout") -->
+<!--<div class="logout"><button (click)="logout()">disconnect</button></div>-->
+
+<!-- Bouton pour les offres d'emploi (utilise la classe "jobs") -->
+<!--<div class="jobs"><button (click)="jobs()">jobs</button></div>-->
+
+<!-- Conditionnellement affiché pour les utilisateurs de type "employee" -->
+<!--<div *ngIf="auth.user.accType == 'employee'">
+</div>
+<button (click)="employee()">employee</button>-->
+
+<!-- Conditionnellement affiché pour les utilisateurs de type "admin" -->
+<!--<div *ngIf="auth.user.accType == 'admin'">
+  <button (click)="admin()">admin</button>
+</div>-->
+
+<!-- Point de sortie du routeur pour afficher le contenu dynamique -->
+<!--<router-outlet></router-outlet>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="navbar" *ngIf="auth.o != 'o'">
+      <div class=" col-sm-12">
+       <ul class="nav wrap-border">
+ 
+    
+      <div class=" col-md-6">
+        <li class="nav-item">
+          <a class="nav-link" (click)="home()">Home</a>
+        </li>
+       </div>
+     
+        <li class="nav-item">
+          <a class="nav-link" (click)="jobs()">offre d'emploi</a>
+        </li>
+
+        <li class="nav-item" *ngIf="auth.user.accType == 'employee'">
+          <a class="nav-link" (click)="employee()">Employee</a>
+        </li>
+        
+        <li class="nav-item" *ngIf="auth.user.accType == 'admin'">
+          <a class="nav-link" (click)="admin()">Admin</a>
+        </li>
+  
+        <li class="nav-item ml-auto">
+          <a class="nav-link logout" (click)="login()">se Connecter</a>
+        </li>
+        <li class="nav-item ml-auto" >
+          <a class="nav-link logout" (click)="logout()">Déconnection</a>
+        </li>
+
+      </ul>
+  </div>
+ </div>
+</div>
+  <router-outlet></router-outlet>
+</body>
+</html>

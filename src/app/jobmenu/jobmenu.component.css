@@ -1,0 +1,47 @@
+/* Style général */
+.job-container {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style pour les titres */
+  .job-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .job-container h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  /* Style pour la description */
+  .job-container h4 {
+    margin-bottom: 10px;
+  }
+  
+  /* Style pour le bouton */
+  .job-container button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .job-container button:hover {
+    background-color: #45a049;
+  }
+  
+  .card-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: #16167d;
+  }
+  

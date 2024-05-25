@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Congés Form</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="card card-container mt-4 mx-auto">
+    
+    <div class="card">
+        <div class="card-body">
+          <h5>Créer Congé</h5>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <label for="startDateInput">Date début congés:</label>
+            <input
+              type="date"
+              class="form-control start"
+              id="startDateInput"
+              placeholder="Start Date"
+              autofocus=""
+              [(ngModel)]="c.startDate"
+            />
+            <label for="durationInput">Durée du congés (en jours):</label>
+            <input
+              type="text"
+              class="form-control duration"
+              id="durationInput"
+              placeholder="Duration"
+              autofocus=""
+              [(ngModel)]="c.durationInDays"
+            />
+
+            <div class="form-group">
+              <label for="leaveTypeSelect">Choisir un type de congé :</label>
+              <select id="leaveTypeSelect" class="form-control" [(ngModel)]="c.type">
+                <option value="">--Veuillez choisir une option--</option>
+                <option value="conge-annuel">Congé Annuel (Payé)</option>
+                <option value="conge-maladie">Congé de Maladie</option>
+                <option value="conge-maternite">Congé Maternité</option>
+                <option value="conge-sans-solde">Congé Sans Solde</option>
+                <option value="conge-sabbatique">Congé Sabbatique</option>
+                <!-- Ajoutez d'autres options de congé au besoin -->
+              </select>
+            </div>
+
+            <div class="mt-3 text-center">
+              <button class="btn btn-success" (click)="submitconge()"> Créer </button>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  
+
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

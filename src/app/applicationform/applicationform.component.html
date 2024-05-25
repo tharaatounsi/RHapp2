@@ -1,0 +1,58 @@
+<h1>
+  {{job.title}}
+</h1>
+<h3>
+  {{job.position}}
+</h3>
+
+  <div class="card card-container">
+    <h2 class="form-login-heading">postuler dans cette offre </h2>
+
+    <div class="login-wrap">
+
+      <div class="form-row">
+
+      <div class="col-6">
+        <label for="fname">E-mail:</label>
+        <input type="E-mail " class="form-control" name="E-mail " [(ngModel)]="email" placeholder="E-mail " >
+      </div>
+      <br>
+
+    </div>
+      <br>
+      <div class="form-row">
+      <div class="col-6">
+        <label for="fname">numéro de téléphone        :</label>
+        <input type="tel" class="form-control" name="numéro de téléphone" placeholder="numéro de téléphone" [(ngModel)]="phone" >
+
+      </div>
+      <br>
+      <div class="col-6">
+        <label for="fname">Nom    :</label>
+        <input type="text"  name="nom" [(ngModel)]="name" >
+      </div>
+    </div>
+      <br>
+      <div class="form-row">
+
+      </div>
+      </div>
+
+      <br>
+
+    </div>
+
+    experience :
+
+    <input type="number" [(ngModel)]="xp">
+
+    cv :
+    <input type="file" (change)="handleFileInput($any($event).target.files)">
+    <p>Extracted text: {{ extractedText }}</p>
+    <div *ngIf="pdfText">
+      <h2>PDF Text:</h2>
+      <pre>{{ pdfText }}</pre>
+    </div>
+
+<button (click)="apply()">postuler</button>
+

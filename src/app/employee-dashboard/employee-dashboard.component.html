@@ -1,0 +1,85 @@
+
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Profile</title>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+     
+  </head>
+  <body>
+      <div class="container mt-5 mx-auto">
+          <div class="card card-container mt-5 mx-auto">
+              <div class="profile-section">
+                  <div class="profile-header">
+                      <img src="https://cdn-icons-png.flaticon.com/512/622/622848.png" alt="Profile Image" class="profile-image">
+                      <h3><i class="fas fa-user"></i> Profile Information </h3>
+                  </div>
+                  <div>
+                      <a href="../../assets/a.pdf" class="blue-button" download>Download fiche de paie</a>
+                      <p><strong>Nom:</strong> {{auth.user.name}}</p>
+                      <p><strong>Email:</strong> {{ auth.user.email }}</p>
+                      <p><strong>CIN:</strong> {{ auth.user.cin }}</p>
+                      <p><strong>Adresse:</strong> {{ auth.user.adresse }}</p>
+                      <p><strong>CNSS :</strong> {{ auth.user.cnss }}</p>
+                      <p><strong>Department:</strong> {{ auth.user.departement }}</p>
+                      <p><strong>Salaire:</strong> {{ auth.user.salary }}</p>
+                      <p><strong> Date d'entrée:</strong> {{ auth.user.dateEntree }}</p>
+                      <p><strong>Type de contrat :</strong> {{ auth.user.typeContrat }}</p>
+                  </div>
+              </div>
+              <div class="d-flex justify-content-between button-group">
+                  <button class="btn btn-primary" (click)="makeconge()">congé</button>
+                  <button class="btn btn-primary" (click)="makesuggestion()">Réclamer</button>
+                  <button class="btn btn-primary" (click)="seeannouncements()">Announcements</button>
+                  <button class="btn btn-primary" (click)="seemeetings()">Réunion</button>
+              </div>
+          </div>
+          <div class="row justify-content-center align-items-center">
+              <div class="col-md-10">
+                  <table class="mb-0 table table-striped" *ngIf="k == true">
+                      <thead>
+                          <tr>
+                              <th>numero d'annonce</th>
+                              <th>contenu d'annonce</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let item of ann">
+                              <td>{{ item.id }}</td>
+                              <td>{{ item.announsment }}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+          <div class="row justify-content-center align-items-center">
+              <div class="col-md-10">
+                  <table class="mb-0 table table-striped" *ngIf="m == true">
+                      <thead>
+                          <tr>
+                              <th>id</th>
+                              <th>topic</th>
+                              <th>date</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let item of meet">
+                              <td>{{ item.id }}</td>
+                              <td>{{ item.topic }}</td>
+                              <td>{{ item.date }}</td>
+                              <td>
+                                <div class="btn-group">
+                                  <button class="btn btn-success"><a herf="https://meet.google.com/kgy-thjc-khe"></a>participer</button>
+                        
+                                </div>
+                              </td>
+                          </tr>
+                          
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </body>
+  </html>

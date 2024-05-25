@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(to right, #6a11cb,#140174);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  /* Style du conteneur principal */
+  .content-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s ease;
+  }
+  
+  .content-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style des titres */
+  h1, h3 {
+    margin-bottom: 24px;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    color: #140174;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  
+  h3 {
+    font-size: 1.75em;
+    color:#140174;
+    margin-bottom: 32px;
+  }
+  
+  /* Style pour la carte de candidature */
+  .card-container {
+    padding: 30px;
+    background: #f4f4f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .form-login-heading {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #140174;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .login-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .form-row .col-6 {
+    flex: 0 0 48%;
+    padding: 5px;
+    text-align: left;
+  }
+  
+  .form-row .col-6 label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-row .col-6 input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border 0.3s ease;
+  }
+  
+  .form-row .col-6 input:focus {
+    border: 1px solid #140174;
+    outline: none;
+  }
+  
+  input[type="file"] {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  button {
+    background-color: #140174;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #2575fc;
+    transform: translateY(-5px);
+  }
+  
+  .experience {
+    margin: 20px 0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .form-row .col-6 {
+      width: 100%;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }

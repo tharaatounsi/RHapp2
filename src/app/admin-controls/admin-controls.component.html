@@ -1,0 +1,275 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+</head>
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPh14gGUy3Ni1EQseGoB1fTSomSF_PwLhx-mjOOsSWFc7lkEou97dCYhhmkyfFVjNBdpE&usqp=CAU" alt="Image" class="rounded-image">
+      <h2>Responsable RH</h2>
+      <ul>
+        <li><a (click)="showEmployees()"> <i class="fas fa-user"></i> Gestion Employé </a></li>
+        <li><a (click)="showConge()"><i class="fas fa-blog"></i>Espace congés</a></li>
+        <li><a (click)="createAnnouncement()"><i class="fas fa-project-diagram"></i>Créer Annonce</a></li>
+        <li><a (click)="createMeeting()"><i class="fas fa-project-diagram"></i> Créer réunion </a></li>
+        <li><a (click)="createuser()"><i class="fas fa-user" ></i> creér utlisateur </a></li>
+        <li><a (click)="createjob()"><i class="fas fa-blog"></i> Additionner une offre d'emploi</a></li>
+        <li><a (click)="seeprofile()"><i  class="fas fa-address-card" ></i> Mon profile </a></li>
+        <li><a (click)="seesuggestions()"><i class="fas fa-blog"></i> Réclamations </a></li>
+        <li><a (click)="seeannouncements()"><i  class="fas fa-blog" ></i> Gestion des annonces </a></li>
+        <li><a (click)="seemeetings()"><i  class="fas fa-blog"></i>Géstions des réunions</a></li>
+        <li><a (click)="showApplicants()"><i class="fas fa-user"></i>condidature</a></li>
+        <li><a (click)="fiche()"><i class="fas fa-user"></i>fiche paie</a></li>
+      </ul>
+    </div>
+
+    <!-- <div class="main-content" *ngIf="uu == true">
+      <div class="image-container" *ngIf="uu == true"--> 
+        <img *ngIf="uu == true" src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/291406987/original/8f19bab6d792002e1647844e71690cf29965204d/visualize-your-data-using-tableau.png" alt="Dashboard Image" class="dashboard-image">
+      
+    
+
+  <div class="container mt-4 mx-auto" *ngIf="u == true">
+  <div class="input-group mb-3 justify-content-end">
+    <div class="col-md-4 ml-auto">
+      <input type="text" class="form-control" placeholder="Rechercher un employé" 
+      aria-label="Rechercher un employé" aria-describedby="button-addon2" [(ngModel)]="s">
+    </div>
+    <div class="tt">
+      <button class="thara" type="button" (click)="search()">Chercher</button>
+    </div>
+
+<!--employé-->
+
+    <div class="container-emp mt-4 mx-auto"> 
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+          <table class="mb-0 table table-striped">
+              <thead class="thead-light">
+                  <tr>
+                      <th>id</th>
+                      <th>nom</th>
+                      <th>cnss</th>
+                      <th>email</th>
+                      <th>mot de passe</th>
+                      <th>actions</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+
+                  <tr *ngFor="let item of users">
+                      <td>{{ item.id }}</td> 
+                      <td>{{ item.name }}</td>
+                      <td>{{ item.cnss }}</td>
+                      <td>{{ item.email }}</td>
+                      <td>{{ item.password }}</td>
+                      <td class="table-actions">
+                          <button class="btn btn-danger" (click)="deleteuser(item)">supprimer</button>
+                          <button class="btn btn-primary" (click)="edituser(item.id)">modifier</button>
+                      </td>
+                  </tr>
+              </tbody>
+              
+          </table>
+      </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<!--congé-->
+
+<div class="container-cong mt-4">
+  <div class="row justify-content-center">
+    <!-- <div class="col-md-1"> -->
+      <table class="table table-striped table-bordered" *ngIf="c == true"> 
+        <thead class="thead-light">
+          <tr>
+            <th>Id Employé</th>
+            <th>Début du Congé</th>
+            <th>Durée</th>
+            <th>Type du Congé</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of conges"> 
+            <td>{{ item.employeeid }}</td> 
+            <td>{{ item.startDate }}</td>
+            <td>{{ item.durationInDays }}</td>
+            <td>{{ item.type }}</td>
+            <td class="table-actions">
+              <button class="btn btn-success mr-2" (click)="acceptconge(item, 'yes')">Accepter</button>
+              <button class="btn btn-danger" (click)="acceptconge(item,'no')">réfuser</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <!-- </div> -->
+</div>
+
+<!--reclamation-->
+
+
+<div class="reclammation"> 
+   
+  <div class="row justify-content-center align-items-center">
+  <div class="col-md-10">
+    <table class="mb-4 table table-striped mt-4">
+      <!--thead>
+        <td>id</td>
+        <td>text</td>
+        <td>actions</td>
+      </thead-->
+         <tbody class="thead-light">
+               <tr *ngFor="let item of sugg">
+                 <td>{{ item.id }}</td> 
+                 <td>{{ item.text }}  </td>
+                 <td> <button class="btn btn-danger">voir profile</button></td>
+               </tr>
+              
+              
+
+              
+         </tbody>
+         </table>
+  </div>
+ </div>
+</div>
+
+
+
+
+<!--annonce-->
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+
+      <div class="annonce" *ngIf="an == true"> 
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-10">
+            <table class="mb-4 table table-striped mt-4">      
+              <thead class="thead-light">
+                <tr>
+                  <th> Id </th>
+                  <th> contenu </th>
+                  <th> Actions </th>
+                </tr>
+              </thead>
+            
+              <tbody>
+                <tr *ngFor="let item of ann">
+                  <td>{{ item.id }}</td> 
+                  <td>{{ item.announsment }}</td>
+                  <td>
+                    <div class="btn-group mr-2">
+                      <button class="btn btn-danger" (click)="deleteAnnouncemet(item)">supprimer</button>
+                      <button class="btn btn-primary" (click)="updateAnnouncemet()">modifier</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+     </div>
+    </div>
+  </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--reunion-->
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+
+      <div class="container" *ngIf="m == true">    
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-10">
+            <table class="mb-4 table table-striped mt-4">       
+               <thead class="thead-light">
+                <tr>
+                  <th>id</th>
+                  <th>contenu</th>
+                  <th>date</th>
+                  <th>action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of meet">
+                  <td>{{ item.id }}</td> 
+                  <td>{{ item.topic }}</td>
+                  <td>{{ item.date }}</td>
+                  <td class="table-actions">
+                    <button class="btn btn-danger" (click)="deleteMeeting(item)"> supprimer </button>
+                    
+                    <button class="btn btn-primary"(click)="updateMeeting()"> modifier </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+<!--candidature-->
+<div class="container-cond mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+
+      <div class="container-cond mt-4" *ngIf="a == true"> 
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-100">
+            <table class="mb-4 table table-striped mt-4"> <!-- Added mt-4 class for margin-top -->
+              <thead class="thead-light">
+                <tr>
+                  <th>id</th>
+                  <th>jobId</th>
+                  <th>name</th>
+                  <th>email</th>
+                  <th>cv</th>
+                  <th>phone</th>
+                  <th>action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of applicants">
+                  <td>{{ item.id }}</td> 
+                  <td>{{ item.jobid }}</td>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.email }}</td>
+                  <td><a href=".\.\tharacv.pdf" class="blue-button" download>télecharger cv</a></td>
+                  <td>{{ item.phone }}</td>
+                  <td>
+                    <div class="btn-group">
+                      <button class="btn btn-success" (click)="acceptapplicant(item)">accepter</button>
+                      <button class="btn btn-danger" (click)="rejectapplicant(item)">réfuser</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <!-- </div> -->
+      
+
+
+  </div>
+ </div>
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</div>                

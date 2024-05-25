@@ -1,0 +1,129 @@
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Style pour le conteneur principal */
+.card-container {
+  max-width: 450px; /* Augmentation de la largeur maximale */
+  width: 100%;
+  padding: 20px;
+  border: 2px solid #140174; /* Contour en bleu roi */
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour la carte */
+.card {
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Style pour le corps de la carte */
+.card-body {
+  text-align: center;
+}
+
+/* Style pour l'image centrée et arrondie */
+.center-image {
+  width: 100px; /* Réduire la taille de l'image */
+  height: 100px; /* Assurer une forme carrée */
+  border-radius: 50%; /* Rendre l'image ronde */
+  object-fit: cover; /* Assurer que l'image couvre le conteneur sans distorsion */
+  margin-bottom: 20px;
+}
+
+/* Style pour le titre du formulaire de connexion */
+.form-login-heading {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+
+
+  color: #140174;
+}
+
+/* Style pour le texte accentué */
+.log {
+  color: #140174;
+}
+
+/* Style pour les champs du formulaire */
+.login-wrap {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #140174;
+  outline: none;
+}
+
+/* Style pour le bouton de connexion */
+.btn-primary {
+  background-color: #140174;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #0e013e;
+  transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-container {
+    padding: 15px;
+  }
+
+  .center-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .btn-primary {
+    padding: 10px 15px;
+    font-size: 1em;
+  }
+}

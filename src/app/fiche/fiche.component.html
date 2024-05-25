@@ -1,0 +1,27 @@
+
+    <title>Gestion des fiches de paie </title>
+    
+       
+
+    <div class="container">
+        <h2>Gestion des fiches de paie </h2>
+        <h6>Télécharger une fiche de paie existante</h6>
+        <form id="uploadForm">
+            <input type="file" id="payrollFile" name="payrollFile" accept=".csv,.xlsx,.xls">
+            <input type="submit" value="Télécharger">
+        </form>
+        <h3>Créer ou modifier une fiche de paie</h3>
+        <form id="payrollForm">
+            <label for="employeeName">Nom de l'employé:</label>
+            <input type="text" id="employeeName" name="employeeName" required>
+            <label for="employeeID">ID de l'employé:</label>
+            <input type="text" id="employeeID" name="employeeID" required>
+            <label for="date importation">date d'importation:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="hourlyRate">Taux horaire:</label>
+            <input type="number" id="hourlyRate" name="hourlyRate" required>
+            <input type="submit" value="Générer / Modifier fiche de paie">
+        </form>
+    </div>
+    
+  
